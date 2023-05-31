@@ -334,6 +334,14 @@ namespace MastermindAssignment
                 y += 35;
             }
         }
+        /// <summary>
+        /// Handles the Click event of the color circle buttons.
+        /// Adds the selected color to the user's pegs array.
+        /// If the number of selected pegs is less than the secret code length, update the user's pegs array and increment the counter.
+        /// Refreshes the display.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void colorCircleButton_Click(object sender, EventArgs e)
         {
             if (userPegsArrayCounter < secretCode.Length)
@@ -348,6 +356,13 @@ namespace MastermindAssignment
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the clearButton.
+        /// Resets the user's pegs array and counter to start a new guess.
+        /// Refreshes the display.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void clearButton_Click(object sender, EventArgs e)
         {
             userPegsArrayCounter = 0;
@@ -356,7 +371,6 @@ namespace MastermindAssignment
                 userPegs[i] = 0;
             }
             Refresh();
-
         }
         /// <summary>
         /// When there are the same number of user selected pegs and secret code length. 
