@@ -355,7 +355,6 @@ namespace MastermindAssignment
                 Refresh();
             }
         }
-
         /// <summary>
         /// Handles the Click event of the clearButton.
         /// Resets the user's pegs array and counter to start a new guess.
@@ -363,14 +362,46 @@ namespace MastermindAssignment
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+
         private void clearButton_Click(object sender, EventArgs e)
         {
-            userPegsArrayCounter = 0;
-            for (int i = 0; i < secretCode.Length; i++)
+            if (userPegsArrayCounter == 0)
             {
-                userPegs[i] = 0;
+                // Display a message box informing the user that there are no pegs to clear
+                MessageBox.Show("There are no pegs to clear.", "Empty Guess", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            Refresh();
+            else
+            {
+                // Remove one peg from the end of the array
+                userPegsArrayCounter--;
+                userPegs[userPegsArrayCounter] = 0;
+                Refresh();
+            }
+        }
+        /// <summary>
+        /// Handles the Click event of the clearButton.
+        /// Resets the user's pegs array and counter to start a new guess.
+        /// Refreshes the display.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void clearAllButton_Click(object sender, EventArgs e)
+        {
+            if (userPegsArrayCounter == 0)
+            {
+                // Display a message box informing the user that there is nothing to clear
+                MessageBox.Show("There are no guesses to clear.", "Empty Guess Row", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                // Clear the user's guesses
+                userPegsArrayCounter = 0;
+                for (int i = 0; i < secretCode.Length; i++)
+                {
+                    userPegs[i] = 0;
+                }
+                Refresh();
+            }
         }
         /// <summary>
         /// When there are the same number of user selected pegs and secret code length. 
@@ -516,7 +547,7 @@ namespace MastermindAssignment
         public void DisableElements()
         {
             submitButton.Enabled = false;
-            clearButton.Enabled = false;
+            clearAllButton.Enabled = false;
             redCircleButton.Enabled = false;
             blueCircleButton.Enabled = false;
             yellowCircleButton.Enabled = false;
@@ -584,5 +615,7 @@ namespace MastermindAssignment
             InheritedHelpMenu inheritedHelpMenu = new();
             inheritedHelpMenu.Show();
         }
+
+        
     }
 }

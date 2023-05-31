@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             userInputPanel = new Panel();
+            clearButton = new Button();
             blackCircleButton = new CircleButtons();
             whiteCircleButton = new CircleButtons();
             pinkCircleButton = new CircleButtons();
             pegGuessLabel = new Label();
             purpleCircleButton = new CircleButtons();
             submitButton = new Button();
-            clearButton = new Button();
+            clearAllButton = new Button();
             colourLabel = new Label();
             greenCircleButton = new CircleButtons();
             redCircleButton = new CircleButtons();
@@ -56,13 +57,14 @@
             // userInputPanel
             // 
             userInputPanel.BorderStyle = BorderStyle.FixedSingle;
+            userInputPanel.Controls.Add(clearButton);
             userInputPanel.Controls.Add(blackCircleButton);
             userInputPanel.Controls.Add(whiteCircleButton);
             userInputPanel.Controls.Add(pinkCircleButton);
             userInputPanel.Controls.Add(pegGuessLabel);
             userInputPanel.Controls.Add(purpleCircleButton);
             userInputPanel.Controls.Add(submitButton);
-            userInputPanel.Controls.Add(clearButton);
+            userInputPanel.Controls.Add(clearAllButton);
             userInputPanel.Controls.Add(colourLabel);
             userInputPanel.Controls.Add(greenCircleButton);
             userInputPanel.Controls.Add(redCircleButton);
@@ -74,6 +76,22 @@
             userInputPanel.Size = new Size(596, 208);
             userInputPanel.TabIndex = 0;
             userInputPanel.Paint += userInputPanel_Paint;
+            // 
+            // clearButton
+            // 
+            clearButton.BackColor = Color.MidnightBlue;
+            clearButton.FlatAppearance.BorderColor = Color.MidnightBlue;
+            clearButton.FlatAppearance.BorderSize = 0;
+            clearButton.FlatStyle = FlatStyle.Flat;
+            clearButton.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            clearButton.ForeColor = Color.White;
+            clearButton.Location = new Point(10, 149);
+            clearButton.Name = "clearButton";
+            clearButton.Size = new Size(103, 34);
+            clearButton.TabIndex = 22;
+            clearButton.Text = "Clear";
+            clearButton.UseVisualStyleBackColor = false;
+            clearButton.Click += clearButton_Click;
             // 
             // blackCircleButton
             // 
@@ -146,29 +164,29 @@
             submitButton.FlatStyle = FlatStyle.Flat;
             submitButton.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             submitButton.ForeColor = Color.White;
-            submitButton.Location = new Point(244, 151);
+            submitButton.Location = new Point(258, 149);
             submitButton.Name = "submitButton";
-            submitButton.Size = new Size(213, 44);
+            submitButton.Size = new Size(161, 34);
             submitButton.TabIndex = 10;
             submitButton.Text = "Submit Guess";
             submitButton.UseVisualStyleBackColor = false;
             submitButton.Click += submitButton_Click;
             // 
-            // clearButton
+            // clearAllButton
             // 
-            clearButton.BackColor = Color.MidnightBlue;
-            clearButton.FlatAppearance.BorderColor = Color.MidnightBlue;
-            clearButton.FlatAppearance.BorderSize = 0;
-            clearButton.FlatStyle = FlatStyle.Flat;
-            clearButton.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            clearButton.ForeColor = Color.White;
-            clearButton.Location = new Point(10, 151);
-            clearButton.Name = "clearButton";
-            clearButton.Size = new Size(197, 44);
-            clearButton.TabIndex = 9;
-            clearButton.Text = "Clear All";
-            clearButton.UseVisualStyleBackColor = false;
-            clearButton.Click += clearButton_Click;
+            clearAllButton.BackColor = Color.MidnightBlue;
+            clearAllButton.FlatAppearance.BorderColor = Color.MidnightBlue;
+            clearAllButton.FlatAppearance.BorderSize = 0;
+            clearAllButton.FlatStyle = FlatStyle.Flat;
+            clearAllButton.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            clearAllButton.ForeColor = Color.White;
+            clearAllButton.Location = new Point(119, 149);
+            clearAllButton.Name = "clearAllButton";
+            clearAllButton.Size = new Size(103, 34);
+            clearAllButton.TabIndex = 9;
+            clearAllButton.Text = "Clear All";
+            clearAllButton.UseVisualStyleBackColor = false;
+            clearAllButton.Click += clearAllButton_Click;
             // 
             // colourLabel
             // 
@@ -352,7 +370,7 @@
         private Panel userInputPanel;
         private Panel mastermindOutputPanel;
         private Button submitButton;
-        private Button clearButton;
+        private Button clearAllButton;
         private Button quitButton;
         private Label colourLabel;
         private Panel secretPanel;
@@ -369,5 +387,6 @@
         private Label clueLabel;
         private Label submitedLabel;
         private Label secretLabel;
+        private Button clearButton;
     }
 }
