@@ -9,9 +9,6 @@ namespace MastermindAssignment
         // stores the code length based on the difficulty menu
         private static int codeLength;
 
-        // gamestate determines whether the game is currently in progress.
-        private bool gamestate;
-
         // colorButtonArrayCounter is an integer variable that keeps track of the current index in the userPegs array.
         private int userPegsArrayCounter = 0;
 
@@ -300,7 +297,7 @@ namespace MastermindAssignment
                 y += 25;
             }
             // Set gamestate to false
-            gamestate = false;
+            //gamestate = false;
 
             // Draw the current user inputs and draw the rows and columns for the submited pegs.
             Graphics submitedPegsGraphics = pegs.Graphics;
@@ -416,7 +413,7 @@ namespace MastermindAssignment
             if (userPegsArrayCounter == secretCode.Length)
             {
                 userPegsArrayCounter = 0;
-                gamestate = true;
+                //gamestate = true;
                 CheckPegs();
                 CountDown();
                 Refresh();
@@ -448,98 +445,99 @@ namespace MastermindAssignment
             int redHits = 0;
             int whiteHits = 0;
 
-            // If the gamestate is true, perform the following actions
-            if (gamestate == true)
+            
+
+            // Loop through to display the empty gray pegs for the submitted pegs
+            for (int i = 0; i < secretCode.Length; i++)
             {
-                // Loop through to display the empty gray pegs for the submitted pegs
-                for (int i = 0; i < secretCode.Length; i++)
-                {
-                    // Assign value of submitted peg to corresponding element in user pegs array
-                    userPegs[i] = 0;
+                // Assign value of submitted peg to corresponding element in user pegs array
+                userPegs[i] = 0;
 
-                    // Store 0 in graphic store array, so when it is displayed the colour is Gray.
-                    submitedPegsStore[i, guessRowPositionTracker] = submitedPegs[i];
-                }
+                // Store 0 in graphic store array, so when it is displayed the colour is Gray.
+                submitedPegsStore[i, guessRowPositionTracker] = submitedPegs[i];
 
-                // Find the gray pegs (incorrect color and incorrect index)
-                for (int i = 0; i < secretCode.Length; i++)
-                {
-                    if (submitedPegs[i] != secretCode[i])
-                    {
-
-                        cluePegCommands[i] = "Gray";
-                    }
-                }
-
-                // Find red pegs (correct color and correct index)
-                for (int i = 0; i < secretCode.Length; i++)
-                {
-
-                    if (submitedPegs[i] == secretCode[i])
-                    {
-                        // Increment red peg counter and mark element as visited in red visited array
-                        redHits++;
-                        redVisited[i] = true;
-                        cluePegCommands[i] = "Red";
-                        continue;
-                    }
-                }
-                // Find white pegs (correct color, incorrect index).
-                for (int i = 0; i < secretCode.Length; i++)
-                {
-                    // Skip any elements that have already been counted as red pegs, to avoid duplicates.
-                    if (redVisited[i])
-                    {
-                        continue;
-                    }
-
-                    // Nested loop to find matching elements in the secret code array
-                    for (int j = 0; j < secretCode.Length; j++)
-                    {
-                        // Skip this iteration if the indices are the same
-                        if (j == i)
-                        {
-                            continue;
-                        }
-
-                        // If the secret code peg has not been marked as visited in either the red or white visited arrays
-                        // As well as matching the submited Peg.
-                        if (!redVisited[j] && !whiteVisited[j] && secretCode[j] == submitedPegs[i])
-                        {
-                            whiteHits++;
-                            whiteVisited[j] = true;
-                            cluePegCommands[i] = "White";
-                            break;
-                        }
-                    }
-                }
-                // Shuffle the red and white pegs, so that the user cannot infer what position the submited pegs correspond to.
-                var shuffledCluePegs = cluePegCommands.OrderBy(a => Guid.NewGuid()).ToList();
-
-                // Store the red and white pegs in the i variable.
-                for (int i = 0; i < secretCode.Length; i++)
-                {
-                    cluePegStore[i, guessRowPositionTracker] = shuffledCluePegs[i];
-                }
-
-                // Check if the player has won by adding the number of red and white pegs
-                for (int i = 0; i < secretCode.Length; i++)
-                {
-                    redHits += whitePegs[i];
-                }
-
-                if (redHits == secretCode.Length)
-                {
-                    Win();
-                }
-                // If user has not won, decrement the counter.
-                // So there next guess is submitted to the row above previous guess.
-                else
-                {
-                    guessRowPositionTracker--;
-                }
 
             }
+
+            // Find the gray pegs (incorrect color and incorrect index)
+            for (int i = 0; i < secretCode.Length; i++)
+            {
+                if (submitedPegs[i] != secretCode[i])
+                {
+
+                    cluePegCommands[i] = "Gray";
+                }
+            }
+
+            // Find red pegs (correct color and correct index)
+            for (int i = 0; i < secretCode.Length; i++)
+            {
+
+                if (submitedPegs[i] == secretCode[i])
+                {
+                    // Increment red peg counter and mark element as visited in red visited array
+                    redHits++;
+                    redVisited[i] = true;
+                    cluePegCommands[i] = "Red";
+                    continue;
+                }
+            }
+            // Find white pegs (correct color, incorrect index).
+            for (int i = 0; i < secretCode.Length; i++)
+            {
+                // Skip any elements that have already been counted as red pegs, to avoid duplicates.
+                if (redVisited[i])
+                {
+                    continue;
+                }
+
+                // Nested loop to find matching elements in the secret code array
+                for (int j = 0; j < secretCode.Length; j++)
+                {
+                    // Skip this iteration if the indices are the same
+                    if (j == i)
+                    {
+                        continue;
+                    }
+
+                    // If the secret code peg has not been marked as visited in either the red or white visited arrays
+                    // As well as matching the submited Peg.
+                    if (!redVisited[j] && !whiteVisited[j] && secretCode[j] == submitedPegs[i])
+                    {
+                        whiteHits++;
+                        whiteVisited[j] = true;
+                        cluePegCommands[i] = "White";
+                        break;
+                    }
+                }
+            }
+            // Shuffle the red and white pegs, so that the user cannot infer what position the submited pegs correspond to.
+            var shuffledCluePegs = cluePegCommands.OrderBy(a => Guid.NewGuid()).ToList();
+
+            // Store the red and white pegs in the i variable.
+            for (int i = 0; i < secretCode.Length; i++)
+            {
+                cluePegStore[i, guessRowPositionTracker] = shuffledCluePegs[i];
+            }
+
+            // Check if the player has won by adding the number of red and white pegs
+            for (int i = 0; i < secretCode.Length; i++)
+            {
+                redHits += whitePegs[i];
+            }
+
+            if (redHits == secretCode.Length)
+            {
+                Win();
+            }
+            //If user has not won, decrement the counter.
+            // So there next guess is submitted to the row above previous guess.
+            else
+            {
+                guessRowPositionTracker--;
+            }
+
+
         }
         /// <summary>
         /// Disables all the buttons, which prevents errors after the game has finished.
@@ -558,6 +556,7 @@ namespace MastermindAssignment
             blackCircleButton.Enabled = false;
             helpButton.Enabled = false;
             quitButton.Enabled = false;
+            clearButton.Enabled = false;
         }
         /// <summary>
         /// Every it is called subtrat 1 from attemptsLeft.
@@ -616,6 +615,6 @@ namespace MastermindAssignment
             inheritedHelpMenu.Show();
         }
 
-        
+
     }
 }
