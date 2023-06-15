@@ -520,11 +520,6 @@ namespace MastermindAssignment
                 cluePegStore[i, guessRowPositionTracker] = shuffledCluePegs[i];
             }
 
-            // Check if the player has won by adding the number of red and white pegs
-            for (int i = 0; i < secretCode.Length; i++)
-            {
-                redHits += whitePegs[i];
-            }
 
             if (redHits == secretCode.Length)
             {
