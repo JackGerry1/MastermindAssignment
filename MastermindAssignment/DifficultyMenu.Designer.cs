@@ -28,131 +28,123 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.helpTitleLabel = new System.Windows.Forms.Label();
-            this.secretCodeComboBox = new System.Windows.Forms.ComboBox();
-            this.guessComboBox = new System.Windows.Forms.ComboBox();
-            this.secretLabel = new System.Windows.Forms.Label();
-            this.guessLabel = new System.Windows.Forms.Label();
-            this.playButton = new System.Windows.Forms.Button();
-            this.quitButton = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            helpTitleLabel = new Label();
+            secretCodeComboBox = new ComboBox();
+            guessComboBox = new ComboBox();
+            secretLabel = new Label();
+            guessLabel = new Label();
+            playButton = new Button();
+            quitButton = new Button();
+            SuspendLayout();
             // 
             // helpTitleLabel
             // 
-            this.helpTitleLabel.AutoSize = true;
-            this.helpTitleLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.helpTitleLabel.ForeColor = System.Drawing.Color.White;
-            this.helpTitleLabel.Location = new System.Drawing.Point(126, 9);
-            this.helpTitleLabel.Name = "helpTitleLabel";
-            this.helpTitleLabel.Size = new System.Drawing.Size(524, 44);
-            this.helpTitleLabel.TabIndex = 2;
-            this.helpTitleLabel.Text = "Select Your Desired Settings\r\n";
-            this.helpTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            helpTitleLabel.AutoSize = true;
+            helpTitleLabel.Font = new Font("Arial", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
+            helpTitleLabel.ForeColor = Color.White;
+            helpTitleLabel.Location = new Point(126, 9);
+            helpTitleLabel.Name = "helpTitleLabel";
+            helpTitleLabel.Size = new Size(524, 44);
+            helpTitleLabel.TabIndex = 2;
+            helpTitleLabel.Text = "Select Your Desired Settings\r\n";
+            helpTitleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // secretCodeComboBox
             // 
-            this.secretCodeComboBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.secretCodeComboBox.FormattingEnabled = true;
-            this.secretCodeComboBox.Items.AddRange(new object[] {
-            "4",
-            "6",
-            "8"});
-            this.secretCodeComboBox.Location = new System.Drawing.Point(497, 87);
-            this.secretCodeComboBox.Name = "secretCodeComboBox";
-            this.secretCodeComboBox.Size = new System.Drawing.Size(55, 32);
-            this.secretCodeComboBox.TabIndex = 3;
-            this.secretCodeComboBox.SelectedIndexChanged += new System.EventHandler(this.secretCodeComboBox_SelectedIndexChanged);
+            secretCodeComboBox.BackColor = SystemColors.Window;
+            secretCodeComboBox.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            secretCodeComboBox.FormattingEnabled = true;
+            secretCodeComboBox.Items.AddRange(new object[] { "4", "6", "8" });
+            secretCodeComboBox.Location = new Point(497, 87);
+            secretCodeComboBox.Name = "secretCodeComboBox";
+            secretCodeComboBox.Size = new Size(55, 32);
+            secretCodeComboBox.TabIndex = 3;
+            secretCodeComboBox.SelectedIndexChanged += secretCodeComboBox_SelectedIndexChanged;
             // 
             // guessComboBox
             // 
-            this.guessComboBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guessComboBox.FormattingEnabled = true;
-            this.guessComboBox.Items.AddRange(new object[] {
-            "8",
-            "10",
-            "12",
-            "14",
-            "16"});
-            this.guessComboBox.Location = new System.Drawing.Point(497, 137);
-            this.guessComboBox.Name = "guessComboBox";
-            this.guessComboBox.Size = new System.Drawing.Size(55, 32);
-            this.guessComboBox.TabIndex = 4;
-            this.guessComboBox.SelectedIndexChanged += new System.EventHandler(this.guessComboBox_SelectedIndexChanged);
+            guessComboBox.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            guessComboBox.FormattingEnabled = true;
+            guessComboBox.Items.AddRange(new object[] { "8", "10", "12", "14", "16" });
+            guessComboBox.Location = new Point(497, 137);
+            guessComboBox.Name = "guessComboBox";
+            guessComboBox.Size = new Size(55, 32);
+            guessComboBox.TabIndex = 4;
+            guessComboBox.SelectedIndexChanged += guessComboBox_SelectedIndexChanged;
             // 
             // secretLabel
             // 
-            this.secretLabel.AutoSize = true;
-            this.secretLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.secretLabel.ForeColor = System.Drawing.Color.White;
-            this.secretLabel.Location = new System.Drawing.Point(227, 87);
-            this.secretLabel.Name = "secretLabel";
-            this.secretLabel.Size = new System.Drawing.Size(262, 24);
-            this.secretLabel.TabIndex = 5;
-            this.secretLabel.Text = "Select Secret Code Length";
+            secretLabel.AutoSize = true;
+            secretLabel.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            secretLabel.ForeColor = Color.White;
+            secretLabel.Location = new Point(227, 87);
+            secretLabel.Name = "secretLabel";
+            secretLabel.Size = new Size(262, 24);
+            secretLabel.TabIndex = 5;
+            secretLabel.Text = "Select Secret Code Length";
             // 
             // guessLabel
             // 
-            this.guessLabel.AutoSize = true;
-            this.guessLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guessLabel.ForeColor = System.Drawing.Color.White;
-            this.guessLabel.Location = new System.Drawing.Point(225, 137);
-            this.guessLabel.Name = "guessLabel";
-            this.guessLabel.Size = new System.Drawing.Size(264, 24);
-            this.guessLabel.TabIndex = 6;
-            this.guessLabel.Text = "Select Number Of Guesses";
+            guessLabel.AutoSize = true;
+            guessLabel.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            guessLabel.ForeColor = Color.White;
+            guessLabel.Location = new Point(225, 137);
+            guessLabel.Name = "guessLabel";
+            guessLabel.Size = new Size(264, 24);
+            guessLabel.TabIndex = 6;
+            guessLabel.Text = "Select Number Of Guesses";
             // 
             // playButton
             // 
-            this.playButton.BackColor = System.Drawing.Color.MidnightBlue;
-            this.playButton.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
-            this.playButton.FlatAppearance.BorderSize = 0;
-            this.playButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.playButton.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.playButton.ForeColor = System.Drawing.Color.White;
-            this.playButton.Location = new System.Drawing.Point(229, 210);
-            this.playButton.Name = "playButton";
-            this.playButton.Size = new System.Drawing.Size(291, 44);
-            this.playButton.TabIndex = 7;
-            this.playButton.Text = "Play Mastermind";
-            this.playButton.UseVisualStyleBackColor = false;
-            this.playButton.Click += new System.EventHandler(this.playButton_Click);
+            playButton.BackColor = Color.MidnightBlue;
+            playButton.FlatAppearance.BorderColor = Color.MidnightBlue;
+            playButton.FlatAppearance.BorderSize = 0;
+            playButton.FlatStyle = FlatStyle.Flat;
+            playButton.Font = new Font("Arial", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            playButton.ForeColor = Color.White;
+            playButton.Location = new Point(229, 210);
+            playButton.Name = "playButton";
+            playButton.Size = new Size(291, 44);
+            playButton.TabIndex = 7;
+            playButton.Text = "Play Mastermind";
+            playButton.UseVisualStyleBackColor = false;
+            playButton.Click += playButton_Click;
             // 
             // quitButton
             // 
-            this.quitButton.BackColor = System.Drawing.Color.MidnightBlue;
-            this.quitButton.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
-            this.quitButton.FlatAppearance.BorderSize = 0;
-            this.quitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.quitButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.quitButton.ForeColor = System.Drawing.Color.White;
-            this.quitButton.Location = new System.Drawing.Point(657, 9);
-            this.quitButton.Name = "quitButton";
-            this.quitButton.Size = new System.Drawing.Size(70, 44);
-            this.quitButton.TabIndex = 9;
-            this.quitButton.Text = "Quit";
-            this.quitButton.UseVisualStyleBackColor = false;
-            this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
+            quitButton.BackColor = Color.MidnightBlue;
+            quitButton.FlatAppearance.BorderColor = Color.MidnightBlue;
+            quitButton.FlatAppearance.BorderSize = 0;
+            quitButton.FlatStyle = FlatStyle.Flat;
+            quitButton.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            quitButton.ForeColor = Color.White;
+            quitButton.Location = new Point(657, 9);
+            quitButton.Name = "quitButton";
+            quitButton.Size = new Size(70, 44);
+            quitButton.TabIndex = 9;
+            quitButton.Text = "Quit";
+            quitButton.UseVisualStyleBackColor = false;
+            quitButton.Click += quitButton_Click;
             // 
             // DifficultyMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(48)))), ((int)(((byte)(19)))));
-            this.ClientSize = new System.Drawing.Size(739, 266);
-            this.Controls.Add(this.quitButton);
-            this.Controls.Add(this.playButton);
-            this.Controls.Add(this.guessLabel);
-            this.Controls.Add(this.secretLabel);
-            this.Controls.Add(this.guessComboBox);
-            this.Controls.Add(this.secretCodeComboBox);
-            this.Controls.Add(this.helpTitleLabel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "DifficultyMenu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Difficulty Menu";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(74, 48, 19);
+            ClientSize = new Size(739, 266);
+            Controls.Add(quitButton);
+            Controls.Add(playButton);
+            Controls.Add(guessLabel);
+            Controls.Add(secretLabel);
+            Controls.Add(guessComboBox);
+            Controls.Add(secretCodeComboBox);
+            Controls.Add(helpTitleLabel);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Name = "DifficultyMenu";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Difficulty Menu";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -194,124 +186,124 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.helpTitleLabel = new System.Windows.Forms.Label();
-            this.secretCodeComboBox = new System.Windows.Forms.ComboBox();
-            this.guessComboBox = new System.Windows.Forms.ComboBox();
-            this.secretLabel = new System.Windows.Forms.Label();
-            this.guessLabel = new System.Windows.Forms.Label();
-            this.playButton = new System.Windows.Forms.Button();
-            this.quitButton = new System.Windows.Forms.Button();
+            helpTitleLabel = new Label();
+            secretCodeComboBox = new ComboBox();
+            guessComboBox = new ComboBox();
+            secretLabel = new Label();
+            guessLabel = new Label();
+            playButton = new Button();
+            quitButton = new Button();
             this.SuspendLayout();
             // 
             // helpTitleLabel
             // 
-            this.helpTitleLabel.AutoSize = true;
-            this.helpTitleLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.helpTitleLabel.ForeColor = System.Drawing.Color.White;
-            this.helpTitleLabel.Location = new System.Drawing.Point(126, 9);
-            this.helpTitleLabel.Name = "helpTitleLabel";
-            this.helpTitleLabel.Size = new System.Drawing.Size(524, 44);
-            this.helpTitleLabel.TabIndex = 2;
-            this.helpTitleLabel.Text = "Select Your Desired Settings\r\n";
-            this.helpTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            helpTitleLabel.AutoSize = true;
+            helpTitleLabel.Font = new Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            helpTitleLabel.ForeColor = System.Drawing.Color.White;
+            helpTitleLabel.Location = new Point(126, 9);
+            helpTitleLabel.Name = "helpTitleLabel";
+            helpTitleLabel.Size = new Size(524, 44);
+            helpTitleLabel.TabIndex = 2;
+            helpTitleLabel.Text = "Select Your Desired Settings\r\n";
+            helpTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // secretCodeComboBox
             // 
-            this.secretCodeComboBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.secretCodeComboBox.FormattingEnabled = true;
-            this.secretCodeComboBox.Items.AddRange(new object[] {
+            secretCodeComboBox.Font = new Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            secretCodeComboBox.FormattingEnabled = true;
+            secretCodeComboBox.Items.AddRange(new object[] {
             "4",
             "6",
             "8"});
-            this.secretCodeComboBox.Location = new System.Drawing.Point(497, 87);
-            this.secretCodeComboBox.Name = "secretCodeComboBox";
-            this.secretCodeComboBox.Size = new System.Drawing.Size(55, 32);
-            this.secretCodeComboBox.TabIndex = 3;
-            this.secretCodeComboBox.SelectedIndexChanged += new System.EventHandler(this.secretCodeComboBox_SelectedIndexChanged);
+            secretCodeComboBox.Location = new Point(497, 87);
+            secretCodeComboBox.Name = "secretCodeComboBox";
+            secretCodeComboBox.Size = new Size(55, 32);
+            secretCodeComboBox.TabIndex = 3;
+            secretCodeComboBox.SelectedIndexChanged += new System.EventHandler(this.secretCodeComboBox_SelectedIndexChanged);
             // 
             // guessComboBox
             // 
-            this.guessComboBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guessComboBox.FormattingEnabled = true;
-            this.guessComboBox.Items.AddRange(new object[] {
+            guessComboBox.Font = new Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            guessComboBox.FormattingEnabled = true;
+            guessComboBox.Items.AddRange(new object[] {
             "8",
             "10",
             "12",
             "14",
             "16"});
-            this.guessComboBox.Location = new System.Drawing.Point(497, 137);
-            this.guessComboBox.Name = "guessComboBox";
-            this.guessComboBox.Size = new System.Drawing.Size(55, 32);
-            this.guessComboBox.TabIndex = 4;
-            this.guessComboBox.SelectedIndexChanged += new System.EventHandler(this.guessComboBox_SelectedIndexChanged);
+            guessComboBox.Location = new Point(497, 137);
+            guessComboBox.Name = "guessComboBox";
+            guessComboBox.Size = new Size(55, 32);
+            guessComboBox.TabIndex = 4;
+            guessComboBox.SelectedIndexChanged += new System.EventHandler(this.guessComboBox_SelectedIndexChanged);
             // 
             // secretLabel
             // 
-            this.secretLabel.AutoSize = true;
-            this.secretLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.secretLabel.ForeColor = System.Drawing.Color.White;
-            this.secretLabel.Location = new System.Drawing.Point(227, 87);
-            this.secretLabel.Name = "secretLabel";
-            this.secretLabel.Size = new System.Drawing.Size(262, 24);
-            this.secretLabel.TabIndex = 5;
-            this.secretLabel.Text = "Select Secret Code Length";
+            secretLabel.AutoSize = true;
+            secretLabel.Font = new Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            secretLabel.ForeColor = System.Drawing.Color.White;
+            secretLabel.Location = new Point(227, 87);
+            secretLabel.Name = "secretLabel";
+            secretLabel.Size = new Size(262, 24);
+            secretLabel.TabIndex = 5;
+            secretLabel.Text = "Select Secret Code Length";
             // 
             // guessLabel
             // 
-            this.guessLabel.AutoSize = true;
-            this.guessLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guessLabel.ForeColor = System.Drawing.Color.White;
-            this.guessLabel.Location = new System.Drawing.Point(225, 137);
-            this.guessLabel.Name = "guessLabel";
-            this.guessLabel.Size = new System.Drawing.Size(264, 24);
-            this.guessLabel.TabIndex = 6;
-            this.guessLabel.Text = "Select Number Of Guesses";
+            guessLabel.AutoSize = true;
+            guessLabel.Font = new Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            guessLabel.ForeColor = System.Drawing.Color.White;
+            guessLabel.Location = new Point(225, 137);
+            guessLabel.Name = "guessLabel";
+            guessLabel.Size = new Size(264, 24);
+            guessLabel.TabIndex = 6;
+            guessLabel.Text = "Select Number Of Guesses";
             // 
             // playButton
             // 
-            this.playButton.BackColor = System.Drawing.Color.MidnightBlue;
-            this.playButton.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
-            this.playButton.FlatAppearance.BorderSize = 0;
-            this.playButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.playButton.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.playButton.ForeColor = System.Drawing.Color.White;
-            this.playButton.Location = new System.Drawing.Point(229, 210);
-            this.playButton.Name = "playButton";
-            this.playButton.Size = new System.Drawing.Size(291, 44);
-            this.playButton.TabIndex = 7;
-            this.playButton.Text = "Play Mastermind";
-            this.playButton.UseVisualStyleBackColor = false;
-            this.playButton.Click += new System.EventHandler(this.playButton_Click);
+            playButton.BackColor = System.Drawing.Color.MidnightBlue;
+            playButton.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
+            playButton.FlatAppearance.BorderSize = 0;
+            playButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            playButton.Font = new Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            playButton.ForeColor = System.Drawing.Color.White;
+            playButton.Location = new Point(229, 210);
+            playButton.Name = "playButton";
+            playButton.Size = new Size(291, 44);
+            playButton.TabIndex = 7;
+            playButton.Text = "Play Mastermind";
+            playButton.UseVisualStyleBackColor = false;
+            playButton.Click += new System.EventHandler(this.playButton_Click);
             // 
             // quitButton
             // 
-            this.quitButton.BackColor = System.Drawing.Color.MidnightBlue;
-            this.quitButton.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
-            this.quitButton.FlatAppearance.BorderSize = 0;
-            this.quitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.quitButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.quitButton.ForeColor = System.Drawing.Color.White;
-            this.quitButton.Location = new System.Drawing.Point(657, 9);
-            this.quitButton.Name = "quitButton";
-            this.quitButton.Size = new System.Drawing.Size(70, 44);
-            this.quitButton.TabIndex = 9;
-            this.quitButton.Text = "Quit";
-            this.quitButton.UseVisualStyleBackColor = false;
-            this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
+            quitButton.BackColor = System.Drawing.Color.MidnightBlue;
+            quitButton.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
+            quitButton.FlatAppearance.BorderSize = 0;
+            quitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            quitButton.Font = new Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            quitButton.ForeColor = System.Drawing.Color.White;
+            quitButton.Location = new Point(657, 9);
+            quitButton.Name = "quitButton";
+            quitButton.Size = new Size(70, 44);
+            quitButton.TabIndex = 9;
+            quitButton.Text = "Quit";
+            quitButton.UseVisualStyleBackColor = false;
+            quitButton.Click += new System.EventHandler(this.quitButton_Click);
             // 
             // CopyOfDifficultyMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(48)))), ((int)(((byte)(19)))));
-            this.ClientSize = new System.Drawing.Size(739, 266);
-            this.Controls.Add(this.quitButton);
-            this.Controls.Add(this.playButton);
-            this.Controls.Add(this.guessLabel);
-            this.Controls.Add(this.secretLabel);
-            this.Controls.Add(this.guessComboBox);
-            this.Controls.Add(this.secretCodeComboBox);
-            this.Controls.Add(this.helpTitleLabel);
+            this.ClientSize = new Size(739, 266);
+            this.Controls.Add(quitButton);
+            this.Controls.Add(playButton);
+            this.Controls.Add(guessLabel);
+            this.Controls.Add(secretLabel);
+            this.Controls.Add(guessComboBox);
+            this.Controls.Add(secretCodeComboBox);
+            this.Controls.Add(helpTitleLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "CopyOfDifficultyMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

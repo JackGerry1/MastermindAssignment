@@ -146,8 +146,8 @@ namespace MastermindAssignment
             for (int i = 0; i < secretCode.Length; i++)
             {
                 // Displays the brush color based on the secret code value when the game has ended.
-                if (winstate || attemptsLeft == 0)
-                {
+                //if (winstate || attemptsLeft == 0)
+                //{
                     outputBrush = secretCode[i] switch
                     {
                         1 => redBrush,
@@ -160,7 +160,7 @@ namespace MastermindAssignment
                         8 => blackBrush,
                         _ => grayBrush,
                     };
-                }
+                //}
                 // Specify the position and size of the secret code pegs.
                 secretCodeGraphics.FillEllipse(outputBrush, xcoords, 15, 30, 30);
                 // Default the brush color to gray, whilst the game is not over.

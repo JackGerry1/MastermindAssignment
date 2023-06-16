@@ -22,7 +22,7 @@ namespace MastermindAssignment
         {
             InitializeComponent();
             difficultyMenu = this;
-           
+
         }
 
         public Board Board
